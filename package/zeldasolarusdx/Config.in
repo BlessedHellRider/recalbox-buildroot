@@ -1,11 +1,10 @@
 config BR2_PACKAGE_ZELDASOLARUSDX
         bool "zeldasolarusdx"
 	depends on BR2_INSTALL_LIBSTDCPP
-	depends on BR2_PACKAGE_LIBPTHREAD_STUBS
 	depends on BR2_PACKAGE_SDL2
-	depends on BR2_PACKAGE_VORBIS_TOOLS
-	depends on BR2_PACKAGE_MODPLUGTOOLS
-	depends on BR2_PACKAGE_LUA_5_1
+	select BR2_PACKAGE_VORBIS_TOOLS
+	select BR2_PACKAGE_MODPLUGTOOLS
+	select BR2_PACKAGE_LUAJIT
         select BR2_PACKAGE_OPENAL 
 	select BR2_PACKAGE_PHYSFS
 	select BR2_PACKAGE_SDL2_IMAGE
@@ -15,8 +14,5 @@ config BR2_PACKAGE_ZELDASOLARUSDX
 	  https://github.com/christopho/solarus/
 
 comment "Zelda Solarus needs a toolchain w/ C++, LUA, Openal, vorbistools , modplugtools, physfs and SDL2"
-	depends on !BR2_INSTALL_LIBSTDCPP || !BR2_PACKAGE_LIBPTHREAD_STUBS || \
-		!BR2_PACKAGE_SDL2 || !BR2_PACKAGE_VORBIS_TOOLS || \
-		!BR2_PACKAGE_MODPLUGTOOLS || !BR2_PACKAGE_LUA_5_1 
-		
-	
+	depends on !BR2_INSTALL_LIBSTDCPP || \
+		!BR2_PACKAGE_SDL2 
