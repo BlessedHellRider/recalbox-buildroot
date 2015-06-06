@@ -1,13 +1,13 @@
 ################################################################################
 #
-# Zelda Solarus dx
+# Zelda Solarus dx Datas
 #
 ################################################################################
-ZELDASOLARUSDX_VERSION = 1.4.1
-ZELDASOLARUSDX_SOURCE = v$(ZELDASOLARUSDX_VERSION).tar.gz
-ZELDASOLARUSDX_SITE = https://github.com/christopho/solarus/archive
+ZELDASOLARUSDX_VERSION = 1.10.1
+ZELDASOLARUSDX_SOURCE = zsdx-$(ZELDASOLARUSDX_VERSION).tar.gz
+ZELDASOLARUSDX_SITE = https://github.com/christopho/zsdx/archive
 ZELDASOLARUSDX_LICENCE = GPL
-ZELDASOLARUSDX_DEPENDENCIES = libpthread-stubs sdl2 sdl2_image sdl2_ttf openal vorbis-tools modplugtools luajit physfs
+ZELDASOLARUSDX_DEPENDENCIES = 
 
 define ZELDASOLARUSDX_RPI_FIXUP.in
 	$(SED) 's|/opt/vc/include|$(STAGING_DIR)/usr/include|g' $(@D)/CMakeLists.txt
@@ -16,13 +16,10 @@ endef
 
 ZELDASOLARUSDX_PRE_CONFIGURE_HOOKS += ZELDASOLARUSDX_RPI_FIXUP
 
-# Just copy the binary and lib, maybe we should copy more things after tests
+# Just copy the Data in a subdirectory of solaris
 define ZELDASOLARUSDX_INSTALL_TARGET_CMDS
-	$(INSTALL) -D $(@D)/solarus_run \
-		$(TARGET_DIR)/usr/games/zeldasolarusdx/solarus_run
-	$(INSTALL) -D $(@D)/libsolarus.so \
-                $(TARGET_DIR)/usr/games/zeldasolarusdx/libsolarus.so
-
+	$(INSTALL) -D $(@D)/*.* \
+		$(TARGET_DIR)/usr/games/solarus/zsdx
 endef
 
 $(eval $(cmake-package))

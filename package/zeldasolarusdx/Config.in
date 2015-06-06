@@ -1,18 +1,8 @@
 config BR2_PACKAGE_ZELDASOLARUSDX
         bool "zeldasolarusdx"
-	depends on BR2_INSTALL_LIBSTDCPP
-	depends on BR2_PACKAGE_SDL2
-	select BR2_PACKAGE_VORBIS_TOOLS
-	select BR2_PACKAGE_MODPLUGTOOLS
-	select BR2_PACKAGE_LUAJIT
-        select BR2_PACKAGE_OPENAL 
-	select BR2_PACKAGE_PHYSFS
-	select BR2_PACKAGE_SDL2_IMAGE
-	select BR2_PACKAGE_SDL2_TTF
+	select BR2_PACKAGE_SOLARUS
         help
-          Zelda-like 2D game engine.
-	  https://github.com/christopho/solarus/
+          Zelda fangame created with the Solarus engine
+	  https://github.com/christopho/zsdx/
 
-comment "Zelda Solarus needs a toolchain w/ C++, LUA, Openal, vorbistools , modplugtools, physfs and SDL2"
-	depends on !BR2_INSTALL_LIBSTDCPP || \
-		!BR2_PACKAGE_SDL2 
+comment "Zelda Solarus DX needs Solarus Engine"
