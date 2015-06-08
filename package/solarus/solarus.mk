@@ -5,7 +5,7 @@
 ################################################################################
 SOLARUS_VERSION = 1.4.2-correctcommit
 SOLARUS_SOURCE = v$(SOLARUS_VERSION).tar.gz
-SOLARUS_SITE = https://github.com/christopho/solarus/releases
+SOLARUS_SITE = https://github.com/christopho/solarus/archive
 SOLARUS_LICENCE = GPL
 SOLARUS_DEPENDENCIES = libpthread-stubs sdl2 sdl2_image sdl2_ttf openal vorbis-tools modplugtools luajit physfs
 
