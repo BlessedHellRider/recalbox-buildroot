@@ -18,7 +18,8 @@ ZELDASOLARUSDX_PRE_CONFIGURE_HOOKS += ZELDASOLARUSDX_RPI_FIXUP
 
 # Just copy the Data in a subdirectory of solaris
 define ZELDASOLARUSDX_INSTALL_TARGET_CMDS
-	$(INSTALL) -D $(@D)/* \
+	mkdir -p $(TARGET_DIR)/usr/games/solarus/zsdx
+	$(INSTALL) -D $(@D)/*.* \
 		$(TARGET_DIR)/usr/games/solarus/zsdx
 endef
 
