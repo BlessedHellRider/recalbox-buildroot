@@ -1,0 +1,8 @@
+config BR2_PACKAGE_ZELDASOLARUSXD
+        bool "zeldasolarusxd"
+	select BR2_PACKAGE_SOLARUS
+        help
+          Zelda fangame created with the Solarus engine
+	  https://github.com/christopho/zsxd/
+
+comment "Zelda Solarus XD needs Solarus Engine"
