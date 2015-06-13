@@ -1,0 +1,7 @@
+config BR2_PACKAGE_ZELDAROTH
+        bool "zeldaroth"
+        help
+          Zelda fangame
+	  http://www.zeldaroth.fr/
+
+comment "Zelda Roth"
