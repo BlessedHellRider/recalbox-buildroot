@@ -1,12 +1,12 @@
 config BR2_PACKAGE_ZELDAROTH
         bool "zeldaroth"
 	depends on BR2_INSTALL_LIBSTDCPP
-	depends on BR2_PACKAGE_SDL
-	depends on BR2_PACKAGE_SDL_GFX
-	depends on BR2_PACKAGE_SDL_IMAGE
-	depends on BR2_PACKAGE_SDL_MIXER
+	select BR2_PACKAGE_SDL
+	select BR2_PACKAGE_SDL_GFX
+	select BR2_PACKAGE_SDL_IMAGE
+	select BR2_PACKAGE_SDL_MIXER
         help
           Zelda fangame
 	  http://www.zeldaroth.fr/
 
-comment "Zelda Roth"
+	comment "Zelda Roth"
